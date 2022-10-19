@@ -10,7 +10,10 @@ public class WordRepetitionMapCreator {
     public Map<String, Integer> createWordRepetitionMap(String sentence) {
         Map<String, Integer> map = new ConcurrentHashMap<>();
         sentence = sentence.toLowerCase(Locale.ROOT);
-        String [] s = sentence.split("\\w+");
+        String [] s = sentence.split("");
+        for(int i=0; i<s.length;i++){
+            s[i] = s[i].replaceAll("[^a-zA-Z]", "");
+        }
         map.put(s[0], 1);
         for(int i = 1; i<s.length; i++){
             for(Map.Entry<String, Integer> e :map.entrySet()){
