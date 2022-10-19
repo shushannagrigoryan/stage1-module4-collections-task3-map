@@ -4,10 +4,11 @@ import javax.swing.*;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class WordRepetitionMapCreator {
     public Map<String, Integer> createWordRepetitionMap(String sentence) {
-        Map<String, Integer> map = new HashMap<>();
+        Map<String, Integer> map = new ConcurrentHashMap<>();
         sentence = sentence.toLowerCase(Locale.ROOT);
         String [] s = sentence.split("\\w+");
         map.put(s[0], 1);
