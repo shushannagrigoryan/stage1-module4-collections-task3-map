@@ -8,7 +8,7 @@ public class WordRepetitionMapCreator {
     public Map<String, Integer> createWordRepetitionMap(String sentence) {
         Map<String, Integer> map = new LinkedHashMap<>();
         sentence = sentence.toLowerCase();
-        String [] s = sentence.split("");
+        String [] s = sentence.split(" ");
         for(int i=0; i<s.length;i++){
             s[i] = s[i].replaceAll("[^a-zA-Z]", "");
         }
