@@ -27,7 +27,9 @@ public class WordRepetitionMapCreator {
                     map.put(value, 1);
                 }
             } else {
-                map.put(value, 1);
+                if(!Objects.equals(value, "")) {
+                    map.put(value, 1);
+                }
             }
         }
 
